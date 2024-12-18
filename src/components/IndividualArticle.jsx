@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import { getArticlebyId, getUserByUsername } from '../api';
+import { Comments } from './Comments'
 import loveheart from '../assets/loveheart.svg';
 import bookmark from '../assets/bookmarkicon.svg'
 
@@ -60,13 +61,7 @@ export function IndividualArticle () {
                 <p>{article.body}</p>
             </div>
         </div>
-
-        <div className='comments-container'>
-            
-            <h1 className='comments-title'>Comments</h1>
-                
-        </div>
-        
+        <Comments articleId={articleId}/>
         </>
     )
 };
