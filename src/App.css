@@ -1,0 +1,213 @@
+.font-face-karma-reg {
+    font-family: "karma-regular";
+  }
+
+.navbar {
+    margin-left: 3%;
+    margin-right: 5%;
+    font-family: "Karma";
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-end;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* border: 1px solid red */
+
+}
+
+.navbar h1 {
+    font-family: "Karma";
+    font-weight: 500;
+    font-size: 2.7em;
+    color: #1E1E1E;
+    line-height: 1;
+    box-sizing: border-box;
+    /* border: 1px solid red */
+}
+
+.navbar span {
+    font-family: "Karma";
+    font-weight: 700;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+    margin-bottom: 0.2rem;
+    /* border: 1px solid red */
+    
+}
+
+.navbar li {
+    font-family: "Karma";
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #1E1E1E;
+    cursor: pointer;
+    position: relative;
+}
+
+
+#login-link {
+    position: relative;
+    color: #1E1E1E;
+}
+
+#login-link::before {
+    content: "";
+    position: absolute;
+    top: -6px; /* Adjust position to center with text */
+    left: -10px; /* Expand the box outside the text */
+    right: -10px;
+    bottom: -6px;
+    background-color: #C9BEEC;
+    z-index: -1; /* Place it behind the text */
+    border-radius: 35px; /* Optional: rounded corners */
+}
+
+
+.navbar li::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Adjust the distance below the text */
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Underline thickness */
+    left: 50%; /* Start from the center */
+    background-color: #EBEBEB; /* Underline color */
+    transform: translateX(-50%); /* Center the pseudo-element */
+    transition: width 0.3s ease-in-out; /* Smooth animation */
+}
+
+.navbar li:hover::after {
+    width: 100%; /* Expand underline to full width */
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    font-family: "Karma";
+    font-weight: 400;
+    font-size: 1.3em;
+    color: #1E1E1E;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+
+#articles-list {
+    list-style: none;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+
+#article-card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #D0CFD0;
+    border-radius: 40px;
+    width: 400px;
+    height: 300px;
+    box-shadow: 12px 14px #EBEBEB;
+}
+
+#article-card-container:hover {
+    cursor: pointer;
+    box-shadow: inset 2px 1px 10px #1E1E1E;;
+    transition-property: box-shadow;
+}
+
+#article-card-title {
+    font-family: "Karma";
+    font-weight: 600;
+    font-size: 2rem;
+    color: #1E1E1E;
+    line-height: 1;
+    box-sizing: border-box;
+    padding: 25px 25px 0px 25px;
+}
+
+#article-card-author-img-container{
+    display: flex;
+    justify-content: start;
+}
+
+#article-card-author {
+    margin-left: 20px;
+    margin-right: 10px;
+    align-content: center;
+    align-items: center;
+    font-family: "Karma";
+    font-weight: 400;
+    font-size: 1.3em;
+    color: #1E1E1E;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+#article-card-author-img {
+    align-items: center;
+    border: 2px solid #1E1E1E;
+    border-radius: 50% 50%;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    background-color: #EBEBEB;
+  }
+
+#read-more {
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 140px;
+    margin-left: 20px;
+    border-radius: 35px;
+    font-family: "Karma";
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #1E1E1E;
+    line-height: 1;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: #C9BEEC;
+}
+
+.browseby-bar {
+    display: flex;
+    margin-left: 200px;
+    margin-right: 200px;
+    justify-content: center;
+    border-radius: 35px;
+    font-family: "Karma";
+    font-weight: 400;
+    font-size: 1.3em;
+    color: #1E1E1E;
+    line-height: 1;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: #EBEBEB;
+    margin: 50px 200px 100px 200px
+}
+
+.browse-params-container {
+    display: flex;
+    column-gap: 50px;
+}
+
+.browseby-bar button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+
