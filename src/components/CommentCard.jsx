@@ -1,6 +1,9 @@
 import loveheart from '../assets/loveheart.svg';
+import { formatDate } from '../utils/formatDate';
 
 export function CommentCard ({comment}) {
+
+    const date = formatDate(comment.created_at)
 
     return (
 <div id='comment-card-container'>
@@ -10,7 +13,7 @@ export function CommentCard ({comment}) {
             <img id='comment-card-avatar-img' src={comment.avatar_url} alt="comment profile avatar" />
             <div id='comment-author-date-container'>
                 <p>{comment.author}</p>
-                <p>3 days ago</p>
+                <p>{date}</p>
             </div>
 
         </div>

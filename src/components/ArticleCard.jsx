@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react"
-import { getUserByUsername } from "../api"
-
 export function ArticleCard ({article}) {
 
     return (
