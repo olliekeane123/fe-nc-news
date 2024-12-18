@@ -15,15 +15,17 @@ function App() {
 
   return (
   <>
-      <Header></Header>
-    <Routes>
-      <Route path='/' element={<Home />}/>
-      <Route path='/explore' element={<Explore articles={articles} setArticles={setArticles}/>}/>
-      <Route path='/post' element={<Post />}/>
-      <Route path='/login' element={<LogIn />}/>
-      <Route path='/account/:username' element={<Account />}/>
-      <Route path='/explore/:articleId' element={<IndividualArticle />}/>
-    </Routes>
+      <Header/>
+      <main className='main'>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/explore' element={<Explore articles={articles} setArticles={setArticles}/>}/>
+          <Route path='/post' element={<Post />}/>
+          <Route path='/login' element={<LogIn />}/>
+          <Route path='/account/:username' element={<Account />}/>
+          <Route path='/explore/:articleId' element={<IndividualArticle />}/>
+        </Routes>
+      </main>
   </>
 
   )

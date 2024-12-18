@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react'
 import { getArticlebyId } from '../api';
 import { Comments } from './Comments'
 import loveheart from '../assets/loveheart.svg';
+import loveheartLiked from '../assets/loveheart-liked.svg'
 import bookmark from '../assets/bookmarkicon.svg'
+import bookmarked from '../assets/bookmarkicon-bookmarked.svg'
 import { formatDate } from '../utils/formatDate';
 
 export function IndividualArticle () {
@@ -11,6 +13,8 @@ export function IndividualArticle () {
 
     const [article, setArticle] = useState({})
     const [isLoading, setIsLoading] = useState(false)
+    const [hasLiked, setHasLiked] = useState(false)
+    const [hasBookmarked, setHasBookmarked] = useState(false)
 
     useEffect(() => {
         setIsLoading(true)
@@ -22,6 +26,18 @@ export function IndividualArticle () {
             
         })
     }, [])
+
+    const handleLikeClick = () =>{
+        !hasLiked ? 
+        setHasLiked(true) 
+        : setHasLiked(false)
+    }
+
+    const handleBookmarkClick = () => {
+        !hasBookmarked ?
+        setHasBookmarked(true)
+        : setHasBookmarked(false)
+    }
 
     return (
         isLoading 
@@ -41,11 +57,11 @@ export function IndividualArticle () {
                 </div>
             </div>
             <div className='like-bookmark-container'>
-                <div className='like-icon-container'>
-                    <img src={loveheart} alt="loveheart icon" />
+                <div onClick={handleLikeClick} className='like-icon-container'>
+                    <img src={hasLiked? loveheartLiked : loveheart} alt="loveheart icon" />
                 </div>
-                <div className='bookmark-icon-container'>
-                    <img src={bookmark} alt="bookmark icon" />
+                <div onClick={handleBookmarkClick} className='bookmark-icon-container'>
+                    <img src={hasBookmarked? bookmarked : bookmark} alt="bookmark icon" />
                 </div>
             </div>
             <div className='individual-article-image-container'>
