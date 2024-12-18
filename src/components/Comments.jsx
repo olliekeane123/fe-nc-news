@@ -2,10 +2,11 @@ import { useState, useEffect } from "react"
 import { getPostedComments } from "../api"
 import { CommentCard } from './CommentCard'
 
+
 export function Comments ({articleId}) {
 
     const [postedComments, setPostedComments] = useState([])
-
+    
     useEffect(()=>{
         getPostedComments(articleId).then((response)=>{
             setPostedComments(response)
