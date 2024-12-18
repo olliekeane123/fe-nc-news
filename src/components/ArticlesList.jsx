@@ -1,6 +1,7 @@
 import { ArticleCard } from "./ArticleCard"
 import { useEffect, useState } from 'react'
 import { getArticles } from '../api'
+import { Link } from "react-router-dom";
 
 function ArticlesList ({articles, setArticles}) {
 
@@ -27,7 +28,9 @@ function ArticlesList ({articles, setArticles}) {
             {articles.map((article)=> {
                 return (
                     <li key={article.article_id} id="list-article">
+                        <Link to={`/explore/${article.article_id}`}>
                         <ArticleCard article={article}/>
+                        </Link>
                     </li>
                 )
             })}
