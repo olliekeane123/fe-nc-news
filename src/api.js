@@ -16,9 +16,15 @@ export const getArticlebyId = (articleId) => {
     })
 }
 
-export const getUserByUsername = (username) =>{
-    return ncNewsApi.get(`/users/${username}`).then((response) =>{
+export const getUserByUsername = (username) => {
+    return ncNewsApi.get(`/users/${username}`).then((response) => {
         return response.data.user
+    })
+}
+
+export const getPostedComments = (articleId) => {
+    return ncNewsApi.get(`/articles/${articleId}/comments`).then((response) => {
+        return response.data.comments
     })
 }
 
