@@ -10,9 +10,6 @@ export function IndividualArticle () {
 
     const [article, setArticle] = useState({})
     const [isLoading, setIsLoading] = useState(false)
-    const [avatarURL, setAvatarURL] = useState("https://www.refugee-action.org.uk/wp-content/uploads/2016/10/anonymous-user.png")
-
-
 
     useEffect(() => {
         setIsLoading(true)
@@ -22,10 +19,7 @@ export function IndividualArticle () {
             const dateFormatted = new Intl.DateTimeFormat('en-GB').format(responseDate);
             setArticle({...response, date: dateFormatted})
             setIsLoading(false)
-            return getUserByUsername(response.author);
-        })
-        .then(({avatar_url})=>{
-            setAvatarURL(avatar_url)
+            
         })
     }, [])
 
@@ -42,7 +36,7 @@ export function IndividualArticle () {
                 <h1 className='individual-article-title'>{article.title}</h1>
                 <div className='author-container'>
                     <p id='individual-article-author'>by {article.author}</p>
-                    <img id='individual-article-author-img' src={avatarURL} alt="" />
+                    <img id='individual-article-author-img' src={article.avatar_url} alt="" />
                     <p id='individual-article-date'>{article.date}</p>
                 </div>
             </div>
