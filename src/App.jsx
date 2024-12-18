@@ -7,6 +7,7 @@ import { Post } from './components/Post'
 import { LogIn } from './components/LogIn'
 import { Account } from './components/Account'
 import { Header } from './components/Header'
+import { IndividualArticle } from './components/IndividualArticle'
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
       <Route path='/post' element={<Post />}/>
       <Route path='/login' element={<LogIn />}/>
       <Route path='/account/:username' element={<Account />}/>
-      <Route path='/explore/:article-id' element={<Account />}/>
+      <Route path='/explore/:articleId' element={<IndividualArticle />}/>
     </Routes>
   </>
 

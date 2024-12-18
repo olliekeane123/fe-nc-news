@@ -7,18 +7,19 @@ export function Header () {
         <h1>northcoders <span>news</span></h1>
             <ul>
                 <Link to="/">
-                    <li>home</li>
+                    <li className="white-underline-transition">home</li>
                 </Link>
                 <Link to="/explore">
-                    <li>explore</li>
+                    <li className="white-underline-transition">explore</li>
                 </Link>
                 <Link to="/post">
-                    <li>post</li>
+                    <li className="white-underline-transition">post</li>
                 </Link>
                 <Link to="/login">
                     <li id="login-link">login/signup</li>
                 </Link>
             </ul>
         </nav>
+            <div id="nav-underline"></div>
     </>)
 }
