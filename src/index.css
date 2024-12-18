@@ -46,11 +46,6 @@ a {
 
 :root {
     background-color: #D9D9D9;
-  
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   
 

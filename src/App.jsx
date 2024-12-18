@@ -10,15 +10,18 @@ import { Header } from './components/Header'
 
 function App() {
 
+  const [articles, setArticles] = useState([])
+
   return (
   <>
       <Header></Header>
     <Routes>
       <Route path='/' element={<Home />}/>
-      <Route path='/explore' element={<Explore />}/>
+      <Route path='/explore' element={<Explore articles={articles} setArticles={setArticles}/>}/>
       <Route path='/post' element={<Post />}/>
       <Route path='/login' element={<LogIn />}/>
       <Route path='/account/:username' element={<Account />}/>
+      <Route path='/explore/:article-id' element={<Account />}/>
     </Routes>
   </>
 

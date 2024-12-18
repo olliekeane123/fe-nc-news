@@ -16,7 +16,7 @@ export function Header () {
                     <li>post</li>
                 </Link>
                 <Link to="/login">
-                    <li>login/signup</li>
+                    <li id="login-link">login/signup</li>
                 </Link>
             </ul>
         </nav>
