@@ -2,7 +2,7 @@ import loveheart from '../assets/loveheart.svg';
 
 export function CommentCard ({comment}) {
 
-    console.log(comment)
+    
     return (
 <div id='comment-card-container'>
     <div id='comment-metadata'>

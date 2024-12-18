@@ -8,7 +8,8 @@ export function Comments ({articleId}) {
 
     useEffect(()=>{
         getPostedComments(articleId).then((response)=>{
-            setPostedComments(response)
+            const dateFormatted = formatDate(response.created_at)
+            setPostedComments({...response, date: dateFormatted})
         })
     }, [])
 

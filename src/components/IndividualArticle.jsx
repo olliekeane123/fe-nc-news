@@ -4,6 +4,7 @@ import { getArticlebyId, getUserByUsername } from '../api';
 import { Comments } from './Comments'
 import loveheart from '../assets/loveheart.svg';
 import bookmark from '../assets/bookmarkicon.svg'
+import { formatDate } from '../utils/formatDate';
 
 export function IndividualArticle () {
     const { articleId } = useParams();
@@ -18,8 +19,7 @@ export function IndividualArticle () {
         setIsLoading(true)
         getArticlebyId(articleId)
         .then((response) => {
-            const responseDate = new Date(response.created_at);
-            const dateFormatted = new Intl.DateTimeFormat('en-GB').format(responseDate);
+            const dateFormatted = formatDate(response.created_at)
             setArticle({...response, date: dateFormatted})
             setIsLoading(false)
             return getUserByUsername(response.author);
