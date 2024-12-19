@@ -15,7 +15,7 @@ function App() {
 
   return (
   <>
-      <Header/>
+      <Header className='header'/>
       <main className='main'>
         <Routes>
           <Route path='/' element={<Home />}/>

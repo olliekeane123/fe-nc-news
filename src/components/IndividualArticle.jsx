@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react'
-import { getArticlebyId } from '../api';
+import { changeVoteCount, getArticlebyId, getVoteCount } from '../api';
 import { Comments } from './Comments'
 import loveheart from '../assets/loveheart.svg';
 import loveheartLiked from '../assets/loveheart-liked.svg'
@@ -15,6 +15,14 @@ export function IndividualArticle () {
     const [isLoading, setIsLoading] = useState(false)
     const [hasLiked, setHasLiked] = useState(false)
     const [hasBookmarked, setHasBookmarked] = useState(false)
+    const [votesCount, setVotesCount] = useState(0);
+
+  useEffect(() => {
+    getVoteCount(articleId, "article").then((votesCount) => {
+    setVotesCount(votesCount);
+   })
+  }, []);
+
 
     useEffect(() => {
         setIsLoading(true)
@@ -28,9 +36,16 @@ export function IndividualArticle () {
     }, [])
 
     const handleLikeClick = () =>{
-        !hasLiked ? 
-        setHasLiked(true) 
-        : setHasLiked(false)
+        if(!hasLiked) {
+            setHasLiked(true) 
+            setVotesCount((currentVotesCount) => currentVotesCount + 1)
+            changeVoteCount(1, articleId, "article")
+        } 
+        else{
+            setHasLiked(false)
+            setVotesCount((currentVotesCount) => currentVotesCount - 1)
+            changeVoteCount(-1, articleId, "article")
+        } 
     }
 
     const handleBookmarkClick = () => {
@@ -57,6 +72,9 @@ export function IndividualArticle () {
                 </div>
             </div>
             <div className='like-bookmark-container'>
+                <div className='vote-count-container'>
+                    <p className='vote-count'>{votesCount}</p>
+                </div>
                 <div onClick={handleLikeClick} className='like-icon-container'>
                     <img src={hasLiked? loveheartLiked : loveheart} alt="loveheart icon" />
                 </div>

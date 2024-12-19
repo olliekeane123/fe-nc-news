@@ -1,9 +1,27 @@
+import { useContext } from 'react';
 import loveheart from '../assets/loveheart.svg';
+import deleteicon from '../assets/deleteicon.svg';
 import { formatDate } from '../utils/formatDate';
+import { UserContext } from '../context/UserProvider';
+import { deleteComment, getPostedComments } from '../api';
 
-export function CommentCard ({comment}) {
+export function CommentCard ({comment, setDisplayedComments, setPostedComments, articleId}) {
 
+    const { user } = useContext(UserContext)
     const date = formatDate(comment.created_at)
+
+    const handleDeleteClick = () => {
+        setDisplayedComments((displayedComments) => {
+            return displayedComments.filter((x) => x !== comment)
+        })
+        deleteComment(comment.comment_id).then(() => {
+            return getPostedComments(articleId)
+        }).then((response) => {
+            setPostedComments(response)
+            setDisplayedComments(response)
+        })
+        
+    }
 
     return (
 <div id='comment-card-container'>
@@ -17,8 +35,19 @@ export function CommentCard ({comment}) {
             </div>
 
         </div>
-        <div className='like-icon-container'>
-            <img src={loveheart} alt="loveheart icon" />
+        <div className='comment-buttons-container'>
+            {user.userInfo.username === comment.author?
+            (
+            <div onClick={handleDeleteClick} className='comment-delete-icon-container'>
+                <img src={deleteicon} alt="delete comment icon" />
+            </div>
+            )
+            : null
+            }
+            <div className='comment-like-icon-container'>
+                <img src={loveheart} alt="like comment icon" />
+            </div>
+
         </div>
     </div>
     <div id='comment-body-container'>

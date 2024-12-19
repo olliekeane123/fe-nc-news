@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+.header {
+    box-shadow: 12px 12px #1E1E1E;
+}
+
 .navbar {
     margin-left: 3%;
     margin-right: 5%;
@@ -304,13 +308,40 @@
     border-radius: 50%;
     background-color: #C9BEEC;
     cursor: pointer;
-    transition: transform 0.2s ease,
+    position: relative;
+    transition: transform 0.2s ease;
+
+}
+
+.vote-count-container{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 40px;
+    right: 80px;
+    border-radius: 40px;
+    background-color: #EBEBEB;
+    cursor: pointer;
+    position: absolute;
+    
+}
+
+.vote-count {
+    font-size: 13pt;
+    font-weight: 600;
+    color: #1E1E1E;
+    align-self: center;
+    position: relative;
+    right: 18px;
+    top: 2px;
+    z-index: 1;
 }
 
 .like-icon-container:hover,
 .bookmark-icon-container:hover {
     transform: scale(1.1); 
-    
 }
 
 .like-icon-container img,
@@ -359,10 +390,10 @@
 
 #your-thoughts-container {
     position: relative;
-    padding: 0px 0px 0px 50px;
-    min-height: 100px;
-    height: auto;
-    width: 100%;
+    justify-self: center;
+    padding: 0px 30px;
+    height: 100px;
+    width: 80%;
     display: flex;
     column-gap: 15px;
     justify-content: start;
@@ -380,8 +411,8 @@
 
 #your-thoughts-input-container{
     display: flex;
-    height: 70%;
-    width: 80%;
+    height: 70px;
+    width: 100%;
     background-color: #EBEBEB;
     border-radius: 10px;
 }
@@ -469,3 +500,56 @@
     font-size: 13pt;
 }
 
+.comment-buttons-container{
+    display: flex;
+    gap: 10px
+}
+
+/* .like-bookmark-container {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 30px; 
+    right: 35px;
+} */
+
+.comment-like-icon-container, .comment-delete-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #C9BEEC;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.comment-like-icon-container:hover, .comment-delete-icon-container:hover {
+    transform: scale(1.1); 
+}
+
+.comment-like-icon-container img {
+    width: 60%;
+    height: 60%;
+}
+.comment-delete-icon-container img {
+    width: 40%;
+    height: 40%;
+}
+
+
+#header-profile-image{
+    border-radius: 50% 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background-color: #EBEBEB;
+}
+
+
+#account-header-container{
+    display: flex;
+    gap: 10px;
+}

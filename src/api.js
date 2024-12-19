@@ -22,6 +22,44 @@ export const getPostedComments = (articleId) => {
     })
 }
 
+export const getVoteCount = (id, postType) => {
+    if(postType === "article"){
+        return ncNewsApi.get(`/articles/${id}`).then((response) => {
+            return response.data.article.votes
+        })
+    }
+}
+
+export const changeVoteCount = (voteDifference, id, postType) => {
+    const reqObj = {voteDifference}
+    if(postType === "article"){
+        return ncNewsApi.patch(`/articles/${id}`, reqObj).then((response)=> {
+            return response.data.article
+        })
+    }
+}
+
+export const postComment = (newComment, articleId) => {
+    return ncNewsApi.post(`/articles/${articleId}/comments`, newComment).then((response) => {
+        return response.data.comment
+    })
+}
+
+export const deleteComment = (commentId) => {
+    return ncNewsApi.delete(`/comments/${commentId}`).then((response) => {
+        return response.data
+    })
+}
+
+export const getUser = (username) => {
+    return ncNewsApi.get(`/users/${username}`).then((response) => {
+        return response.data.user
+    })
+}
+
+
+
+
 
 /* export const getItems = (category, sort_by, order) =>{
     return ncNewsApi.get("/articles", {params: {category_name: category}}).then((response) => {
