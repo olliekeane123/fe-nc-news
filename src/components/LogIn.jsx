@@ -26,14 +26,14 @@ export function LogIn () {
     return (
         <>
         <form id="login-form" onSubmit={handleLoginSubmit}>
-            <p>Log In</p>
+            <p className="login-title">Welcome Back</p>
             <div className="login-input-container">
                 <input className="login-input" type="text" name="username" placeholder="username" onChange={(e)=>setUsername(e.target.value)} value={username}/>
             </div>
             <div className="login-input-container">
                 <input className="login-input" type="text" name="password" placeholder="password" onChange={(e)=>setPassword(e.target.value)} value={password}/>
             </div>
-            <button type="submit">Log In</button>
+            <button id="submit-login-button" type="submit">Log In</button>
         </form>
         </>
     )
