@@ -57,8 +57,10 @@ export const getUser = (username) => {
     })
 }
 
-export const postArticle = () => {
-    return ncNewsApi.post ('articles')
+export const postArticle = (newArticle) => {
+    return ncNewsApi.post ('/articles', newArticle).then((response) => {
+        return response.data.article
+    })
 }
 
 

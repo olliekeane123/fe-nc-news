@@ -4,12 +4,12 @@ import { UserContext } from "../context/UserProvider";
 
 
 export function Header () {
-
     const { user } = useContext(UserContext)
 
     return (<>
         <nav className="navbar">
-        <h1>northcoders <span>news</span></h1>
+        <h1 id="header-title-long">northcoders <span>news</span></h1>
+        <h1 id="header-title-short">nc <span>news</span></h1>
             <ul>
                 <Link to="/">
                     <li className="white-underline-transition">home</li>

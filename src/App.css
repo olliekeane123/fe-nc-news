@@ -37,11 +37,19 @@
 .navbar h1 {
     font-family: "Karma";
     font-weight: 500;
-    font-size: 2.7em;
+    font-size: 2.5em;
     color: #1E1E1E;
     line-height: 1;
     box-sizing: border-box;
 }
+#header-title-long {
+    display: block;
+}
+
+#header-title-short {
+    display: none;
+}
+
 
 .navbar span {
     font-family: "Karma";
@@ -64,6 +72,22 @@
     position: relative;
 }
 
+@media (max-width: 600px) {
+    #header-title-long {
+        display: none;
+    }
+    #header-title-short {
+        display: block;
+        font-size: 1.7em;
+    }
+    .navbar li {
+        font-size: 1.1em;
+    }
+    .navbar{
+        margin-top: 1rem;
+    margin-bottom: 1rem;
+    }
+}
 
 #login-link {
     position: relative;
@@ -257,6 +281,11 @@
     width: 600px;
     background-color: #D0CFD0;
     padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0px 10px 20px #585454;
+}
+.login-title{
+    font-weight: 700;
 }
 .login-input-container{
     display: flex;
@@ -278,37 +307,24 @@
     outline: none;
 }
 
-/* #your-thoughts-input-container{
-    display: flex;
-    height: 70px;
-    width: 100%;
-    background-color: #EBEBEB;
-    border-radius: 10px;
-}
-
-#comment-form {
-    width: 100%;
-    height: 100%;
-    align-content: center;
-    display: flex;
-    justify-content: space-between;
-}
-*/
-
-#commentt-input {
-    margin: 3%;
-    align-self: center;
-    height: 80%;
-    font-size: 16pt;
-    background-color: inherit;
-    width: 100%;
+#submit-login-button{
+    margin: 10px;
+    width: auto;
+    border-radius: 35px;
+    font-family: "Karma";
+    font-weight: 400;
+    font-size: 1em;
+    color: #1E1E1E;
+    line-height: 1;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 20px;
+    background-color: #C9BEEC;
     border: none;
-} 
+    cursor: pointer;
+}
 
 
 /* //////////////////////////////////////////// Articles List (explore page)*/
-
-
 
 #articles-list {
     margin: 0px 10px 100px 10px;
@@ -402,8 +418,6 @@
 
 /* //////////////////////////////////////////// Sort Query Bar (explore page)*/
 
-
-
 .browseby-bar {
     display: flex;
     margin-left: 200px;
@@ -464,8 +478,6 @@
     z-index: 10;
 }
 
-
-
 .sort-query-list button {
     margin: 0;
     padding: 0;
@@ -488,12 +500,11 @@
 
 /* //////////////////////////////////////////// Individual articles*/
 
-
-
 .individual-article-container {
     display: block;
     font-family: "Karma";
-    margin: 3% 3% 6% 3%;
+    margin: 3% 0% 6% 0%;
+    width: 80%;
     border-radius: 40px;
     box-shadow: 12px 14px #EBEBEB;
     background-color: #D0CFD0;
@@ -604,11 +615,14 @@
 .individual-article-image-container {
     display: flex;
     justify-content: center;
+    justify-self: center;
+    max-width: 90%;
 }
 
 #individual-article-image{
     margin: 3%;
     border-radius: 10px;
+    width: 90%;
     object-fit: contain;
     background-color: #EBEBEB;
 }
@@ -621,8 +635,8 @@
 
 
 
-/* //////////////////////////////////////////// Comments underneath Articles*/
 
+/* //////////////////////////////////////////// Comments underneath Articles*/
 
 .comments-container {
     display: block;
@@ -787,5 +801,151 @@
     width: 40%;
     height: 40%;
 }
+
+
+/* //////////////////////////////////////////// Post Article*/
+
+#post-article-container {
+    width: 80%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    font-family: "Karma";
+    font-weight: 400;
+    color: #1E1E1E;
+    line-height: 1;
+    margin: 0% 0 6% 0;
+    padding: 3% 3% 3% 3%;
+    border-radius: 40px;
+    box-shadow: 12px 14px #D0CFD0;
+    background-color: #EBEBEB;
+    height: auto; /* Let the container grow */
+}
+
+#add-title-container, #add-body-container{
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    align-items: center;
+}
+
+#add-body-container {
+    padding: 3%;
+}
+
+
+#article-title-input,
+#article-body-input {
+    width: 95%;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    word-wrap: break-word;
+    resize: none;
+    box-sizing: border-box; /* Prevents overflow issues */
+    overflow: hidden;
+}
+
+#article-title-input {
+    font-size: 1.8em;
+}
+
+#plus-icon{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 5px;
+}
+#add-body-container #plus-icon{
+    align-self: flex-start;
+    width: 25px;
+    height: 25px;
+    margin-right: 0;
+}
+.plus-icon-hidden{
+    visibility: hidden;
+    width: 0px;
+}
+
+#article-body-input {
+    font-size: 1.2em;
+    flex: 1 0 auto;
+    min-height: 300px;
+    height: auto;
+    padding: 0 5%;
+}
+
+/* Styles for image preview */
+#add-article-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+}
+#drag-and-drop-text{
+    color: #585454;
+}
+
+#article-image-preview-container {
+    display: flex;
+    justify-content: center;
+    max-width: 90%;
+    max-height: 35%;
+    position: relative;
+}
+
+#article-image-preview {
+    height: 100%;
+    width: 100%;
+    margin: 3%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#article-img-delete-icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #C9BEEC;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: -15px;
+    transition: transform 0.2s ease;
+}
+
+#article-img-delete-icon-container:hover {
+    transform: scale(1.1); 
+}
+
+#article-img-delete-icon-container img{
+    width: 40%;
+    height: 40%;
+}
+
+#submit-post-article{
+    margin: 10px;
+    width: auto;
+    border-radius: 35px;
+    font-family: "Karma";
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #1E1E1E;
+    line-height: 1;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 20px;
+    background-color: #C9BEEC;
+    border: none;
+    cursor: pointer;
+}
+
 
 
