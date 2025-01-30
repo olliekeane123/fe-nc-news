@@ -11,7 +11,6 @@ function ArticlesList ({articles, isLoading}) {
             <p>taking a moment to load...</p>
         </div>
         :
-
         <ul id="articles-list">
             {articles.map((article)=> {
                 return (
@@ -22,6 +21,10 @@ function ArticlesList ({articles, isLoading}) {
                     </li>
                 )
             })}
+            <li className="psuedo-flex-start-dummy"></li>
+            <li className="psuedo-flex-start-dummy"></li>
+            <li className="psuedo-flex-start-dummy"></li>
+            <li className="psuedo-flex-start-dummy"></li>
         </ul>    
     )
 }
