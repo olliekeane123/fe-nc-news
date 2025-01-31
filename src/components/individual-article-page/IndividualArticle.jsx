@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react'
-import { changeVoteCount, getArticlebyId, getVoteCount } from '../api';
+import { changeVoteCount, getArticlebyId, getVoteCount } from '../../api';
 import { Comments } from './Comments'
-import loveheart from '../assets/loveheart.svg';
-import loveheartLiked from '../assets/loveheart-liked.svg'
-import bookmark from '../assets/bookmarkicon.svg'
-import bookmarked from '../assets/bookmarkicon-bookmarked.svg'
-import { formatDate } from '../utils/formatDate';
+import loveheart from '../../assets/loveheart.svg';
+import loveheartLiked from '../../assets/loveheart-liked.svg'
+import bookmark from '../../assets/bookmarkicon.svg'
+import bookmarked from '../../assets/bookmarkicon-bookmarked.svg'
+import { formatDate } from '../../utils/formatDate';
 
 export function IndividualArticle () {
     const { articleId } = useParams();

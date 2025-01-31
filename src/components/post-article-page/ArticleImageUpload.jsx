@@ -1,6 +1,6 @@
 import { useDropzone } from "react-dropzone"
-import addImageIcon from "../assets/add-image-icon.svg"
-import deleteicon from "../assets/deleteicon.svg"
+import addImageIcon from "../../assets/add-image-icon.svg"
+import deleteicon from "../../assets/deleteicon.svg"
 
 export const ArticleImageUpload = ({
     setArticleImage,

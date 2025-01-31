@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react"
-import { getPostedComments, postComment } from "../api"
+import { getPostedComments, postComment } from "../../api"
 import { CommentCard } from './CommentCard'
-import { UserContext } from "../context/UserProvider"
+import { UserContext } from "../../context/UserProvider"
 
 
 export function Comments ({articleId}) {
