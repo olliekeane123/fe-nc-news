@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import dropdownarrow from '../assets/dropdownarrow.svg'
+import dropdownarrow from '../../assets/dropdownarrow.svg'
 export function BrowseByBar ({setSearchParams}) {
 
     const [openDropdown, setOpenDropdown] = useState(null); // Tracks which dropdown is open
@@ -12,7 +12,7 @@ export function BrowseByBar ({setSearchParams}) {
 
     useEffect(()=>{
         document.addEventListener("mousedown", (e)=> {
-            if(!browseBarRef.current.contains(e.target)){
+            if(browseBarRef.current && !browseBarRef.current.contains(e.target)){
                 setOpenDropdown(null)
             }
         }

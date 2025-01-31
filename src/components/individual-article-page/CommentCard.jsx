@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import loveheart from '../assets/loveheart.svg';
-import deleteicon from '../assets/deleteicon.svg';
-import { formatDate } from '../utils/formatDate';
-import { UserContext } from '../context/UserProvider';
-import { deleteComment, getPostedComments } from '../api';
+import loveheart from '../../assets/loveheart.svg';
+import deleteicon from '../../assets/deleteicon.svg';
+import { formatDate } from '../../utils/formatDate';
+import { UserContext } from '../../context/UserProvider';
+import { deleteComment, getPostedComments } from '../../api';
 
 export function CommentCard ({comment, setDisplayedComments, setPostedComments, articleId}) {
 

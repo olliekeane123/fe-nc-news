@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import ArticlesList from './ArticlesList'
 import { BrowseByBar } from './BrowseByBar'
 import { useSearchParams } from "react-router-dom"
-import { getArticles } from '../api'
+import { getArticles } from '../../api'
 
 export function Explore ({articles, setArticles, isLoading}) {
 
