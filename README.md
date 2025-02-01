@@ -25,7 +25,7 @@ By default, users are **not logged in**, restricting certain features such as po
 ## Setup Instructions
 1. Clone the repository:
    ```sh
-   git clonet[https://github.com/olliekeane123/fe-nc-news.git]
+   git clone [https://github.com/olliekeane123/fe-nc-news.git]
    cd fe-nc-news
    ```
 2. Install dependencies:
