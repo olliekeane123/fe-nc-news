@@ -2,6 +2,8 @@ import { useState, useEffect, useContext } from "react"
 import { getPostedComments, postComment } from "../../api"
 import { CommentCard } from './CommentCard'
 import { UserContext } from "../../context/UserProvider"
+import { Link } from "react-router-dom"
+import { YouNeedToBeLoggedIn } from "../YouNeedToBeLoggedIn"
 
 
 export function Comments ({articleId}) {
@@ -10,6 +12,7 @@ export function Comments ({articleId}) {
     const [postedComments, setPostedComments] = useState([])
     const [displayedComments, setDisplayedComments] = useState([])
     const [commentInput, setCommentInput] = useState('')
+    const [alertActive, setAlertActive] = useState(false)
 
     useEffect(()=>{
         getPostedComments(articleId).then((response)=>{
@@ -34,6 +37,9 @@ export function Comments ({articleId}) {
     }
 
     return (
+        <>
+        {alertActive? <YouNeedToBeLoggedIn setAlertActive={setAlertActive}/>:null}
+        
         <div className='comments-container'>
             <h1 className='comments-title'>Comments</h1>
 
@@ -61,5 +67,6 @@ export function Comments ({articleId}) {
           
                 
         </div>
+        </>
     )
 }

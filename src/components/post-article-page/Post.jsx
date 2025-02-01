@@ -52,7 +52,7 @@ export function Post() {
                     <p>Looks like you're not logged in...</p>
 
                     <Link to="/login" id="navigate-to-login-button">
-                        Take me to the Log in!
+                        Click here to Log in!
                     </Link>
                 </div>
             ) : (
