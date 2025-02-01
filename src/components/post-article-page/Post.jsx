@@ -41,9 +41,7 @@ export function Post() {
         setArticleImage(null)
         setImagePreview(null)
     }
-    if (articleTitle && articleBody && articleTopic) {
-        console.log("ready to submit!")
-    }
+
 
     return (
         <>

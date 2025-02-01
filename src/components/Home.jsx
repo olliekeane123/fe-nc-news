@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom"
 import { ArticleCard } from "./explore-page/ArticleCard"
+import codingimg from "../assets/coding.webp"
+import footballimg from "../assets/football.jpg"
+import cookingimg from "../assets/cooking.jpeg"
+import filmimg from "../assets/film.jpg"
 
 export function Home({ articles, isLoading }) {
     const suggestedArticles = articles.slice(0, 2)
@@ -38,7 +42,7 @@ export function Home({ articles, isLoading }) {
                         <div className="topic-container">
                             <img
                                 className="topic-img"
-                                src="src/assets/football.jpg"
+                                src={footballimg}
                                 alt="football topic image"
                             />
                             <p className="topic-text">football</p>
@@ -48,7 +52,7 @@ export function Home({ articles, isLoading }) {
                         <div className="topic-container">
                             <img
                                 className="topic-img"
-                                src="src/assets/coding.webp"
+                                src={codingimg}
                                 alt="coding topic image"
                             />
                             <p className="topic-text">coding</p>
@@ -58,7 +62,7 @@ export function Home({ articles, isLoading }) {
                         <div className="topic-container">
                             <img
                                 className="topic-img"
-                                src="src/assets/cooking.jpeg"
+                                src={cookingimg}
                                 alt="cooking topic image"
                             />
                             <p className="topic-text">cooking</p>
@@ -67,7 +71,7 @@ export function Home({ articles, isLoading }) {
                     <div className="topic-container">
                         <img
                             className="topic-img"
-                            src="src/assets/film.jpg"
+                            src={filmimg}
                             alt="film topic image"
                         />
                         <p className="topic-text">film</p>
