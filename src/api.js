@@ -41,7 +41,6 @@ export const changeVoteCount = (voteDifference, id, postType) => {
 
 export const postComment = (newComment, articleId) => {
     return ncNewsApi.post(`/articles/${articleId}/comments`, newComment).then((response) => {
-        console.log(response.data)
         return response.data.comment
     })
 }
@@ -61,7 +60,7 @@ export const getUser = (username) => {
 export const postArticle = (newArticle) => {
     console.log(newArticle)
     return ncNewsApi.post('/articles', newArticle).then((response) => {
-        return response.data
+        return response.data // don't need this for now -> maybe in the future for showing posted article
     })
 }
 

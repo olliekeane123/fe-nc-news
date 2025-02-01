@@ -645,7 +645,6 @@
     border-radius: 40px;
     box-shadow: 12px 14px #EBEBEB;
     background-color: #D0CFD0;
-    position: relative;
     
 }
 
@@ -659,7 +658,7 @@
 }
 
 #your-thoughts-container {
-    position: relative;
+    margin-top: 20px;
     justify-self: center;
     padding: 0px 30px;
     height: 100px;
@@ -1017,11 +1016,50 @@
     color: #1E1E1E;
     line-height: 1;
     gap: 20px;
-    width: 600px;
+    width: 70%;
     background-color: #D0CFD0;
     padding: 30px;
     border-radius: 4px;
     box-shadow: 0px 20px 30px #c5c5c5;
+
+}
+.error-alert{
+    margin: 100px 0 50px 0;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Karma";
+    font-weight: 700;
+    font-size: 1.3em;
+    color: #e06e6e;
+    line-height: 1;
+    gap: 20px;
+    width: 50%;
+    background-color: #D9D9D9;
+    padding: 40px 30px;
+    border-radius: 4px;
+    box-shadow: 0px 20px 30px #c5c5c5;
+    border: 5px solid#e06e6e;
+}
+#close-error-icon-container{
+    width: 15px;
+    height: 15px;
+    background-color: #D0CFD0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 5px solid #b1b1b1;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+#close-error-icon{
+    width: 80%;
 }
 
 #not-logged-in-container p {
