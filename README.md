@@ -25,8 +25,8 @@ By default, users are **not logged in**, restricting certain features such as po
 ## Setup Instructions
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/northcoders-news-frontend.git
-   cd northcoders-news-frontend
+   git clonet[https://github.com/olliekeane123/fe-nc-news.git]
+   cd fe-nc-news
    ```
 2. Install dependencies:
    ```sh
