@@ -9,7 +9,7 @@ Visit the site: [Northcoders News](https://ollie-northcoders-news.netlify.app/ex
 - View a list of articles and filter by topic.
 - Read full articles with comments.
 - Logged-in users can upvote/like articles and post comments.
-- Sorting options for articles (by date, comment count, votes, etc.).
+- Sorting options for articles (by date, comment count, votes and topic).
 
 ## User Access
 By default, users are **not logged in**, restricting certain features such as posting and voting. To log in, use:
