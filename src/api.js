@@ -64,16 +64,6 @@ export const postArticle = (newArticle) => {
     })
 }
 
-
-
-
-
-/* export const getItems = (category, sort_by, order) =>{
-    return ncNewsApi.get("/articles", {params: {category_name: category}}).then((response) => {
-        return response.data.articles
-    })
-}
- */
 export const getCategories = () =>{
     return ncNewsApi.get("/categories").then((response)=>{
         return response.data.categories
