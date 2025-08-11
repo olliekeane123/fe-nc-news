@@ -2,7 +2,7 @@
 
 # Northcoders News
 
-A React-based news aggregation website where users can browse, read, and interact with articles. Users can log in to post articles, vote, and comment. The site integrates with the Northcoders News API.
+A React-based news aggregation website where users can browse, read, and interact with articles. Users can log in to post articles, vote, and comment. The site integrates with the Northcoders News API, found [here](https://github.com/olliekeane123/be-nc-news)
 
 ## Live Demo
 Visit the site: [Northcoders News](https://ollie-northcoders-news.netlify.app)
