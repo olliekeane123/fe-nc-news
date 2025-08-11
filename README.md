@@ -1,3 +1,5 @@
+<img width="2445" height="1241" alt="Screenshot from 2025-08-11 11-08-49" src="https://github.com/user-attachments/assets/424845bf-2106-45bd-8856-5a4d443f0ca8" />
+
 # Northcoders News
 
 A React-based news aggregation website where users can browse, read, and interact with articles. Users can log in to post articles, vote, and comment. The site integrates with the Northcoders News API.
@@ -21,6 +23,7 @@ By default, users are **not logged in**, restricting certain features such as po
 - **State Management:** React Context
 - **Styling:** CSS, Other than React-Dropzone, used for drag and drop image functionality, no other libraries are used
 - **API Integration:** Axios (fetching from the Northcoders News API)
+
 
 ## Setup Instructions
 1. Clone the repository:
